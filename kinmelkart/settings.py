@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-EXTERNAL_APPS=['category',]
+EXTERNAL_APPS=['category','accounts','store',]
 INSTALLED_APPS.extend(EXTERNAL_APPS)
 
 MIDDLEWARE = [
@@ -71,6 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'kinmelkart.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'#appname.modelname
 
 
 # Database
@@ -121,6 +122,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT=BASE_DIR/'static'
 STATICFILES_DIRS = ['kinmelkart/static']
+MEDIA_URL='/media/'
+MEDIA_ROOT=BASE_DIR/'media'
 
 
 # Default primary key field type
