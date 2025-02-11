@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-EXTERNAL_APPS=['category','accounts','store',]
+EXTERNAL_APPS=['category','accounts','store','carts',]
 INSTALLED_APPS.extend(EXTERNAL_APPS)
 
 MIDDLEWARE = [
