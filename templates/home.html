@@ -24,80 +24,27 @@
 		<h3 class="section-title">Popular products</h3>
 	</header><!-- sect-heading -->
 	
-		
+		<!--product display  -->
 	<div class="row">
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/1.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Just another product name</a>
-					<div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-				</figcaption>
+		
+		{% for product in products %}
+		<div class="col-md-4 col-lg-3 mb-4">
+			<div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+				<a href="./product-detail.html" class="img-wrap d-block bg-light">
+					<img src="{{product.images.url}}" class="card-img-top img-fluid rounded-top" alt="{{ product.product_name }}">
+				</a>
+				<div class="card-body text-center">
+					<h5 class="card-title">
+						<a href="./product-detail.html" class="text-dark text-decoration-none fw-semibold">
+							{{ product.product_name }}
+						</a>
+					</h5>
+					<div class="price text-primary fw-bold fs-5">${{product.price}}</div>
+				</div>
 			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/2.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Some item name here</a>
-					<div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/3.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Great product name here</a>
-					<div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/4.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Just another product name</a>
-					<div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/5.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Just another product name</a>
-					<div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/6.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Some item name here</a>
-					<div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/7.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Great product name here</a>
-					<div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
-		<div class="col-md-3">
-			<div class="card card-product-grid">
-				<a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/9.jpg' %}"> </a>
-				<figcaption class="info-wrap">
-					<a href="./product-detail.html" class="title">Just another product name</a>
-					<div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-				</figcaption>
-			</div>
-		</div> <!-- col.// -->
+		</div>
+		{% endfor %}
+	
 	</div> <!-- row.// -->
 	
 	</div><!-- container // -->
